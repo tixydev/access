@@ -17,7 +17,7 @@ Tixy Event Services Ltd
 <icon src="img/barcode-152.png" />
 <content src="index.html"/>
 <access origin="*"/>
-<gap:platform name=“ios”>
+<gap:platform name=“ios” />
 <preference name="orientation" value="portrait" />
 <preference name="android-MediaPlaybackRequiresUserAction" value="false" />
 <preference name="android-AllowInlineMediaPlayback" value="true" />
