@@ -14,7 +14,7 @@ $scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
-$scope.PushButton2_click = function() {scanresult = scan();
+$scope.PushButton2_click = function() {var scanresult = scan();
 
 alert("We got a $App.barcode\n" +
             "Result: " + scanresult.text + "\n" +
@@ -23,11 +23,14 @@ alert("We got a $App.barcode\n" +
 
 $App.barcode = scanresult.text;
 $App.format = scanresult.$App.format;
-$App.cancelled = scanresult.$App.cancelled;};
+$App.cancelled = scanresult.$App.cancelled;
+$scope.AlertBox("Barcode",$App.barcode,"primary",null );
+$scope.AlertBox("Format",$App.format,"primary",null );
+$scope.AlertBox("Cancelled?",$App.cancelled,"primary",null );};
 });
 NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$filter,$window) {
  $scope.CloseDialog = function() {
   $modalInstance.close();
  };
 });
-function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);console.log("Scanner result: \n"+"text: "+result.text+"\n"+"format: "+result.format+"\n"+"cancelled: "+result.cancelled+"\n");document.getElementById("info").innerHTML=result.text;console.log(result);},function(error){console.log("Scanning failed: ",error);});};function encode(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.encode(scanner.Encode.TEXT_TYPE,"http://www.nhl.com",function(success){alert("encode success: "+success);},function(fail){alert("encoding failed: "+fail);});};
+function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);});};
