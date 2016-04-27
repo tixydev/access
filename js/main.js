@@ -15,6 +15,12 @@ NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$fi
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
 $scope.PushButton2_click = function() {result = scan();
+
+alert("We got a $App.barcode\n" +
+            "Result: " + result.text + "\n" +
+            "$App.format: " + result.$App.format + "\n" +
+            "$App.cancelled: " + result.$App.cancelled);
+
 $App.barcode = result.text;
 $App.format = result.$App.format;
 $App.cancelled = result.$App.cancelled;};
