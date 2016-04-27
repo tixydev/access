@@ -29,5 +29,5 @@ Tixy Event Services Ltd
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.media" />
 <gap:plugin name="org.apache.cordova.device-orientation" />
-<splash src=“img/splash.png” width=“640“ height=“1334”/>
+<splash src=“www/img/splash.png” width=“640“ height=“1334”/>
 </widget>
