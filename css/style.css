@@ -13,8 +13,8 @@ p,h1,h2,h3,h4,h5,h6{overflow:hidden}a:focus,.btn:focus,.btn:active:focus,.btn.ac
 #Paragraph3 {position:absolute;left:8px;top:209px;width:151px;height:21px;margin:0;}
 #PushButton1 {position:absolute;left:3px;top:519px;width:57px;height:46px;margin:0;font-size:30px;background-color:black;border-color:black}
 #Scanner {position:relative;width:100%;height:100%;overflow:auto;;background-color:#FFF}
-#Headline2 {position:absolute;left:6px;top:37px;width:263px;height:24px;margin:0;font-size:15pt;font-weight:bold}
-#Paragraph4 {position:absolute;left:7px;top:74px;width:301px;height:66px;margin:0;}
-#PushButton2 {position:absolute;left:10px;top:152px;width:301px;height:41px;margin:0;}
+#Headline2 {position:absolute;left:14px;top:37px;width:263px;height:24px;margin:0;font-size:15pt;font-weight:bold}
+#Paragraph4 {position:absolute;left:15px;top:74px;width:288px;height:66px;margin:0;}
+#PushButton2 {position:absolute;left:18px;top:152px;width:286px;height:41px;margin:0;}
 #Paragraph5 {position:absolute;left:13px;top:225px;width:277px;height:222px;margin:0;}
 #DialogContainer1 {margin-left:auto;margin-right:auto;width:320px;height:568px;}

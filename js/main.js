@@ -14,20 +14,20 @@ $scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
-$scope.PushButton2_click = function() {result = scan();
+$scope.PushButton2_click = function() {scanresult = scan();
 
 alert("We got a $App.barcode\n" +
-            "Result: " + result.text + "\n" +
-            "$App.format: " + result.$App.format + "\n" +
-            "$App.cancelled: " + result.$App.cancelled);
+            "Result: " + scanresult.text + "\n" +
+            "$App.format: " + scanresult.$App.format + "\n" +
+            "$App.cancelled: " + scanresult.$App.cancelled);
 
-$App.barcode = result.text;
-$App.format = result.$App.format;
-$App.cancelled = result.$App.cancelled;};
+$App.barcode = scanresult.text;
+$App.format = scanresult.$App.format;
+$App.cancelled = scanresult.$App.cancelled;};
 });
 NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$filter,$window) {
  $scope.CloseDialog = function() {
   $modalInstance.close();
  };
 });
-function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){return result;},function(error){console.log("Scanning failed: ",error);});};function encode(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.encode(scanner.Encode.TEXT_TYPE,"http://www.nhl.com",function(success){alert("encode success: "+success);},function(fail){alert("encoding failed: "+fail);});}
+function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);console.log("Scanner result: \n"+"text: "+result.text+"\n"+"format: "+result.format+"\n"+"cancelled: "+result.cancelled+"\n");document.getElementById("info").innerHTML=result.text;console.log(result);},function(error){console.log("Scanning failed: ",error);});};function encode(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.encode(scanner.Encode.TEXT_TYPE,"http://www.nhl.com",function(success){alert("encode success: "+success);},function(fail){alert("encoding failed: "+fail);});};
