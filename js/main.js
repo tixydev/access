@@ -25,4 +25,4 @@ NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$f
   $modalInstance.close();
  };
 });
-function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result)return result;},function(error){console.log("Scanning failed: ",error);});},function encode(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.encode(scanner.Encode.TEXT_TYPE,"http://www.nhl.com",function(success){alert("encode success: "+success);},function(fail){alert("encoding failed: "+fail);});}
+function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){return result;},function(error){console.log("Scanning failed: ",error);});};function encode(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.encode(scanner.Encode.TEXT_TYPE,"http://www.nhl.com",function(success){alert("encode success: "+success);},function(fail){alert("encoding failed: "+fail);});}
