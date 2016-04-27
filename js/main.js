@@ -14,7 +14,8 @@ $scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
-$scope.PushButton2_click = function() {scanner.scan(
+$scope.PushButton2_click = function() {var scanner = window.cordova.require("cordova/plugin/BarcodeScanner");
+scanner.scan(
              function (result) {
                       alert("We got a barcode\n" +
                         "Result: " + result.text + "\n" +
@@ -42,4 +43,3 @@ NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$f
   $modalInstance.close();
  };
 });
-var scanner=window.cordova.require("cordova/plugin/BarcodeScanner");
