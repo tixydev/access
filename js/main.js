@@ -17,11 +17,6 @@ $App.NAB.PageID = "Scanner";
 $scope.PushButton2_click = function() {var scanner = window.cordova.require("cordova/plugin/BarcodeScanner");
 scanner.scan(
              function (result) {
-                      alert("We got a barcode\n" +
-                        "Result: " + result.text + "\n" +
-                        "Format: " + result.format + "\n" +
-                        "Cancelled: " + result.cancelled);
-
                     $App.barcode = result.text;
                     $App.format = result.format;
                     $App.cancelled = result.cancelled;
