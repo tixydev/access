@@ -17,7 +17,6 @@ Tixy Event Services Ltd
 <icon src="img/barcode-152.png" />
 <content src="index.html"/>
 <access origin="*"/>
-<gap:platform name="ios"/>
 <preference name="orientation" value="portrait" />
 <preference name="android-MediaPlaybackRequiresUserAction" value="false" />
 <preference name="android-AllowInlineMediaPlayback" value="true" />
@@ -29,5 +28,8 @@ Tixy Event Services Ltd
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.media" />
 <gap:plugin name="org.apache.cordova.device-orientation" />
+<platform name=“ios”>
 <splash src=“www/img/splash.png” width=“640“ height=“1334”/>
+</platform>
+<preference name="SplashScreenDelay" value="10000" />
 </widget>
