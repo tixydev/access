@@ -21,12 +21,6 @@ Tixy Event Services Ltd
 <preference name="orientation" value="portrait" />
 <preference name="android-MediaPlaybackRequiresUserAction" value="false" />
 <preference name="android-AllowInlineMediaPlayback" value="true" />
-
-<platform name="ios">
-    <!-- images are determined by width and height. The following are supported -->
-        <splash src=“img/splash.png” width="640" height="1136"/>
-   </platform>
-
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/media" />
 <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
