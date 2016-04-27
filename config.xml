@@ -27,7 +27,7 @@ Tixy Event Services Ltd
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/media" />
 <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
-<gap:plugin name="br.com.paveisitemas.splashscreen" spec="2.1.1" source="pgb" />
+<plugin name="br.com.paveisitemas.splashscreen" />
 <gap:plugin name="com.valet-manager.lineaprocdv"/>
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.media" />
