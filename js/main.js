@@ -17,13 +17,13 @@ $App.NAB.PageID = "Scanner";
 $scope.PushButton2_click = function() {scanresult = doScan();
 
 alert("We got a barcode\n" +
-            "Result: " + scanresult.text + "\n" +
-            "Format: " + scanresult.format + "\n" +
-            "Cancelled: " + scanresult.cancelled);
+            "Result: " + scanresult + "\n" +
+            "Format: " + scanresult + "\n" +
+            "Cancelled: " + scanresult);
 
-$App.barcode = scanresult.text;
-$App.format = scanresult.format;
-$App.cancelled = scanresult.cancelled;
+$App.barcode = scanresult;
+$App.format = scanresult;
+$App.cancelled = scanresult;
 $scope.AlertBox("Barcode",$App.barcode,"primary",null );
 $scope.AlertBox("Format",$App.format,"primary",null );
 $scope.AlertBox("Cancelled?",$App.cancelled,"primary",null );};
@@ -33,4 +33,4 @@ NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$f
   $modalInstance.close();
  };
 });
-function doScan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");var scanresult=scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);return error;});return scanresult;};
+function doScan(){var scanner=cordova.require("cordova/plugin/BarcodeScanner");var scanresult=scanner.scan(scanSuccess(result),scanError(error));function scanSuccess(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return"success";};function scanError(error){alert("We got an error: "+error);return"fail";};return scanresult;};
