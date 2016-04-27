@@ -17,8 +17,7 @@ $App.NAB.PageID = "Scanner";
 $scope.PushButton2_click = function() {result = scan();
 $App.barcode = result.text;
 $App.format = result.$App.format;
-$App.cancelled = result.$App.cancelled;
-alert( "Barcode: "+$App.barcode+" / Format: "+$App.format+" / Cancelled: "+$App.cancelled );};
+$App.cancelled = result.$App.cancelled;};
 });
 NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$filter,$window) {
  $scope.CloseDialog = function() {
