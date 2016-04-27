@@ -33,4 +33,4 @@ NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$f
   $modalInstance.close();
  };
 });
-function doScan(){console.log('scanning');scanresult=scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);return error;});return scanresult;};
+function doScan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");var scanresult=scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);return error;});return scanresult;};
