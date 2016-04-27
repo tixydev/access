@@ -14,16 +14,16 @@ $scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
-$scope.PushButton2_click = function() {var scanresult = scan();
+$scope.PushButton2_click = function() {scanresult = doScan();
 
-alert("We got a $App.barcode\n" +
+alert("We got a barcode\n" +
             "Result: " + scanresult.text + "\n" +
-            "$App.format: " + scanresult.$App.format + "\n" +
-            "$App.cancelled: " + scanresult.$App.cancelled);
+            "Format: " + scanresult.format + "\n" +
+            "Cancelled: " + scanresult.cancelled);
 
 $App.barcode = scanresult.text;
-$App.format = scanresult.$App.format;
-$App.cancelled = scanresult.$App.cancelled;
+$App.format = scanresult.format;
+$App.cancelled = scanresult.cancelled;
 $scope.AlertBox("Barcode",$App.barcode,"primary",null );
 $scope.AlertBox("Format",$App.format,"primary",null );
 $scope.AlertBox("Cancelled?",$App.cancelled,"primary",null );};
@@ -33,4 +33,4 @@ NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$f
   $modalInstance.close();
  };
 });
-function scan(){console.log('scanning');var scanner=cordova.require("cordova/plugin/BarcodeScanner");scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);});};
+function doScan(){console.log('scanning');scanresult=scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);return result;},function(error){console.log("Scanning failed: ",error);return error;});return scanresult;};
