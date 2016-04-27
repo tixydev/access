@@ -14,18 +14,32 @@ $scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
 $App.NAB.PageID = "Scanner";
-$scope.PushButton2_click = function() {fresscan = doScan();
+$scope.PushButton2_click = function() {scanner.scan(
+             function (result) {
+                      alert("We got a barcode\n" +
+                        "Result: " + result.text + "\n" +
+                        "Format: " + result.format + "\n" +
+                        "Cancelled: " + result.cancelled);
 
-$App.barcode = fresscan.text;
-$App.format = fresscan.format;
-$App.cancelled = fresscan.cancelled;
-$scope.AlertBox("Barcode",$App.barcode,"primary",null );
-$scope.AlertBox("Format",$App.format,"primary",null );
-$scope.AlertBox("Cancelled?",$App.cancelled,"primary",null );};
+                    $App.barcode = result.text;
+                    $App.format = result.format;
+                    $App.cancelled = result.cancelled;
+                    $App.error = 0;
+                    $App.errmsg = 0;
+                },
+                function (error) {
+                    alert("Scanning failed: " + error);
+                    $App.barcode = 0;
+                    $App.format = 0;
+                    $App.cancelled = 0;
+                    $App.error = 1;
+                    $App.errmsg = error;
+                }
+                );};
 });
 NeoApp.controller("NewDialog_Ctrl", function($scope,$rootScope,$modalInstance,$filter,$window) {
  $scope.CloseDialog = function() {
   $modalInstance.close();
  };
 });
-function doScan(){console.log('scan(): init');var scanner=window.cordova.require("cordova/plugin/BarcodeScanner");var scanResult;scanner.scan(function(result){alert("We got a barcode\n"+"Result: "+result.text+"\n"+"Format: "+result.format+"\n"+"Cancelled: "+result.cancelled);scanResult=result;},function(error){alert("Scanning failed: "+error);scanResult=error;});randomresult={text:"aerar",format:"asdsadasd",cancelled:"aqrqewqe"};return randomresult;};
+var scanner=window.cordova.require("cordova/plugin/BarcodeScanner");
