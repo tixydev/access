@@ -9,6 +9,7 @@ function debounce(func,wait,immediate){var timeout;return function(){var context
 NeoApp.controller("Settings_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 1;
 $App.NAB.PageID = "Settings";
+$scope.PushButton1_click = function() {$scope.GotoPage( "Scanner" );};
 });
 NeoApp.controller("Scanner_Ctrl", function($scope,$rootScope,$route,$timeout,$filter,$window,$animate) {
 $App.NAB.PageNumber = 2;
