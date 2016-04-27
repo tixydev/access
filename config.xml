@@ -21,13 +21,16 @@ Tixy Event Services Ltd
 <preference name="orientation" value="portrait" />
 <preference name="android-MediaPlaybackRequiresUserAction" value="false" />
 <preference name="android-AllowInlineMediaPlayback" value="true" />
-<preference name="SplashScreen" value=“img/splash.png” />
-<preference name="SplashScreenDelay" value="1000" />
-<preference name="SplashMaintainAspectRatio" value=“true” />
+
+<platform name="ios">
+    <!-- images are determined by width and height. The following are supported -->
+        <splash src=“img/splash.png” width="640" height="1136"/>
+   </platform>
+
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/media" />
 <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
-<plugin name="br.com.paveisitemas.splashscreen" />
+<plugin name="cordova-plugin-splashscreen" spec="2.1.0" source="pgb" />
 <gap:plugin name="com.valet-manager.lineaprocdv"/>
 <gap:plugin name="org.apache.cordova.device" />
 <gap:plugin name="org.apache.cordova.media" />
