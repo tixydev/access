@@ -15,6 +15,7 @@ Ticket validation application for Revolution Ticketing Platform
 Tixy Event Services Ltd
 </author>
 <icon src="img/barcode-152.png" />
+<splash src="splash.png" />
 <content src="index.html"/>
 <access origin="*"/>
 <gap:platform name="ios"/>
