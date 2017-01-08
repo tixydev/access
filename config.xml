@@ -24,7 +24,7 @@ Tixy Event Services Ltd
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/media" />
 <plugin name="cordova-plugin-barcodescanner" source="npm"/>
-<plugin name="com.valet-manager.lineaprocdv"/>
+<plugin spec="https://github.com/tixydev/lineapro-phonegap-plugin"/>
 <plugin name="org.apache.cordova.device" />
 <plugin name="org.apache.cordova.media" />
 <plugin name="org.apache.cordova.device-orientation" />
