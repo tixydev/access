@@ -23,9 +23,9 @@ Tixy Event Services Ltd
 <preference name="android-AllowInlineMediaPlayback" value="true" />
 <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/media" />
-<gap:plugin name="cordova-plugin-barcodescanner"/>
-<gap:plugin name="com.valet-manager.lineaprocdv"/>
-<gap:plugin name="org.apache.cordova.device" />
-<gap:plugin name="org.apache.cordova.media" />
-<gap:plugin name="org.apache.cordova.device-orientation" />
+<plugin name="cordova-plugin-barcodescanner" source="npm"/>
+<plugin name="com.valet-manager.lineaprocdv"/>
+<plugin name="org.apache.cordova.device" />
+<plugin name="org.apache.cordova.media" />
+<plugin name="org.apache.cordova.device-orientation" />
 </widget>
